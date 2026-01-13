@@ -1,6 +1,8 @@
 # LLM Negotiator Purple Agent
 
-A Claude-powered negotiation agent for the [Meta-Game Negotiation Assessor](https://agentbeats.dev) on AgentBeats.
+A **Claude-powered** negotiation agent for the [Meta-Game Negotiation Assessor](https://agentbeats.dev) on AgentBeats.
+
+> **Note**: This agent uses the Anthropic API exclusively. It requires an `ANTHROPIC_API_KEY` and only works with Claude models.
 
 ## Overview
 
