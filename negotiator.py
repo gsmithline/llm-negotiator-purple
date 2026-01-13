@@ -11,6 +11,10 @@ from typing import Any
 # Initialize Anthropic client
 client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
+# Model can be configured via environment variable
+DEFAULT_MODEL = "claude-sonnet-4-20250514"
+MODEL = os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL)
+
 SYSTEM_PROMPT = """You are an expert negotiator in a bargaining game. You will receive game state information and must make strategic decisions.
 
 IMPORTANT RULES:
@@ -104,7 +108,7 @@ Propose an allocation.
 
     try:
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model=MODEL,
             max_tokens=500,
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_prompt}]

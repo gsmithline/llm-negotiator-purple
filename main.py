@@ -134,9 +134,12 @@ def main():
     port = args.port
     base_url = args.card_url or os.environ.get("AGENT_URL", f"http://{host}:{port}/")
 
-    # Check for API key
+    # Check for API key and log model
     if not os.environ.get("ANTHROPIC_API_KEY"):
         logger.warning("ANTHROPIC_API_KEY not set - LLM calls will fail!")
+
+    model = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
+    logger.info(f"Using model: {model}")
 
     logger.info(f"Starting LLM Negotiator on {host}:{port}")
     logger.info(f"Agent URL: {base_url}")
