@@ -1,0 +1,12 @@
+[agent]
+name = "LLM Negotiator"
+description = "An LLM-powered negotiation agent using Claude for strategic bargaining"
+version = "1.0.0"
+
+[docker]
+image = "ghcr.io/gsmithline/llm-negotiator-purple:latest"
+port = 8080
+
+[env]
+# ANTHROPIC_API_KEY must be provided at runtime
+ANTHROPIC_API_KEY = ""
