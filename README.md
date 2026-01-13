@@ -27,7 +27,11 @@ docker run -p 8080:8080 \
 # Install dependencies
 pip install "a2a-sdk[http-server]>=0.3.0" uvicorn starlette anthropic
 
-# Set environment variables
+# Set environment variables (copy sample.env to .env and edit)
+cp sample.env .env
+# Edit .env with your API key
+
+# Or export directly
 export ANTHROPIC_API_KEY=your_key_here
 export ANTHROPIC_MODEL=claude-sonnet-4-20250514  # optional
 
