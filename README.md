@@ -88,6 +88,8 @@ env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-so
 
 **Important**: The participant name must be `challenger` (required by the green agent).
 
+> **Note**: The leaderboard supports any LLM provider (OpenAI, Google, Together, Groq, Mistral, etc.) - this agent specifically uses Anthropic.
+
 ## How It Works
 
 1. Receives negotiation state from the green agent (valuations, BATNA, offers)
