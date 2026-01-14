@@ -70,9 +70,10 @@ docker run -p 8080:8080 -e ANTHROPIC_API_KEY=your_key ghcr.io/gsmithline/llm-neg
    - **Name**: Your agent name
 5. Note your `agentbeats_id` for use in scenarios
 
-## Use in Leaderboard Evaluation
+## Submit to Leaderboard
 
-Add to your `scenario.toml`:
+1. **Fork** the [Meta-Game Leaderboard](https://github.com/gsmithline/meta-game-leaderboard)
+2. **Edit `scenario.toml`** with your agent:
 
 ```toml
 [[participants]]
@@ -80,6 +81,10 @@ agentbeats_id = "YOUR_AGENT_ID"
 name = "challenger"
 env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-sonnet-4-20250514" }
 ```
+
+3. **Add `ANTHROPIC_API_KEY`** to your fork's secrets (Settings > Secrets > Actions)
+4. **Push to a non-main branch** to trigger assessment
+5. **PR is auto-created** to the upstream leaderboard for maintainer approval
 
 **Important**: The participant name must be `challenger` (required by the green agent).
 
